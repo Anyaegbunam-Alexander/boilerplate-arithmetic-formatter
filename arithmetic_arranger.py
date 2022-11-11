@@ -4,7 +4,6 @@ def check_list_len(problems):
 def check_chrs_len(chr1, chr2):
   return len(chr1) and len(chr2) <= 4
 
-
 def check_digits(chr1, chr2):
   try:
     int(chr1) and int(chr2)
@@ -22,6 +21,7 @@ def check_operand(b):
       break
   return res
 
+
 def arithmetic_arranger(problems, ans=False):
   if not check_list_len(problems):
     return 'Error: Too many problems.'
@@ -32,6 +32,7 @@ def arithmetic_arranger(problems, ans=False):
   line1 = line2 = line3 = line4 = ""
   s_space = "    "
   begin  = True
+
   for arr in problems:
     b = arr.split()
     num1, oper, num2 = b[0], b[1], b[2]
@@ -51,8 +52,8 @@ def arithmetic_arranger(problems, ans=False):
         line4 += str(int(num1) + int(num2)).rjust(space + 2)
       else:
         line4 += str(int(num1) - int(num2)).rjust(space + 2)
-
       begin = False
+
     else:
       line1 += num1.rjust(space + 6)
       line2 += oper.rjust(5) + ' ' + num2.rjust(space)
@@ -61,6 +62,7 @@ def arithmetic_arranger(problems, ans=False):
         line4 += s_space + str(int(num1) + int(num2)).rjust(space + 2)
       else:
         line4 += s_space + str(int(num1) - int(num2)).rjust(space + 2)
+
   if ans == True:
     arranged_problems = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4
   else:
@@ -68,4 +70,3 @@ def arithmetic_arranger(problems, ans=False):
   
   return arranged_problems
 
-print(arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]))
