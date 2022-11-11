@@ -4,6 +4,7 @@ def check_list_len(problems):
 def check_chrs_len(chr1, chr2):
   return len(chr1) and len(chr2) <= 4
 
+
 def check_digits(chr1, chr2):
   try:
     int(chr1) and int(chr2)
